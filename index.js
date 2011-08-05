@@ -9,5 +9,8 @@ module.exports = function (bits, base) {
         xs.push(s);
     }
     
-    return xs.join('');
+    var res = xs.join('');
+    var digits = Math.ceil(Math.log(Math.pow(2,bits)) / Math.log(base));
+    var extra = digits - res.length;
+    return Array(extra + 1).join('0') + res;
 };
