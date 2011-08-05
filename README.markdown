@@ -1,4 +1,4 @@
-kid
+hat
 ===
 
 Generate random IDs.
@@ -7,9 +7,9 @@ example
 =======
 
 ````javascript
-var kid = require('kid');
+var hat = require('hat');
 
-var id = kid(128);
+var id = hat(128);
 console.log(id);
 ````
 
@@ -22,9 +22,9 @@ output:
 methods
 =======
 
-var kid = require('kid');
+var hat = require('hat');
 
-kid(bits=128, base=16)
+hat(bits=128, base=16)
 ----------------------
 
 Generate a random ID string with `bits` of data in a `base`.
