@@ -9,7 +9,7 @@
         "test" : "test"
     },
     "devDependencies" : {
-        "expresso" : "0.7.x",
+        "expresso" : "0.7.x"
     },
     "scripts" : {
         "test" : "expresso"
