@@ -64,3 +64,6 @@ checked for collisions.
 If `expandBy` is specified, increment `bits` by this amount if too many
 collisions occur. If `expandBy` isn't specified, `rack()` will throw if too many
 collisions occur during generation.
+
+Optionally call `var id = rack(data)` to store `data` at the new ID.
+You can get the data out again with `rack.get(id)`.
