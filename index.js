@@ -25,12 +25,13 @@ var hat = module.exports = function (bits, base) {
     else return res;
 };
 
-hat.rack = function (bits, base) {
+hat.rack = function (bits, base, expandBy) {
     var fn = function () {
         var iters = 0;
         do {
             if (iters ++ > 10) {
-                throw new Error('too many ID collisions, use more bits')
+                if (expandBy) bits += expandBy;
+                else throw new Error('too many ID collisions, use more bits')
             }
             
             var id = hat(bits, base);
