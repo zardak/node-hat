@@ -1,6 +1,6 @@
 {
     "name" : "hat",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "description" : "generate random IDs and avoid collisions",
     "main" : "index.js",
     "directories" : {

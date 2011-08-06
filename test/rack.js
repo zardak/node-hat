@@ -30,6 +30,9 @@ exports.data = function () {
     assert.equal(rack.hats[a], 'a!');
     assert.equal(rack.hats[b], "it's a b!");
     assert.deepEqual(rack.hats[c], [ 'c', 'c', 'c' ]);
+    
+    rack.set(a, 'AAA');
+    assert.equal(rack.get(a), 'AAA');
 };
 
 exports.expandBy = function () {

@@ -51,6 +51,11 @@ hat.rack = function (bits, base, expandBy) {
         return fn.hats[id];
     };
     
+    fn.set = function (id, value) {
+        fn.hats[id] = value;
+        return fn;
+    };
+    
     fn.bits = bits || 128;
     fn.base = base || 16;
     return fn;
