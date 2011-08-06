@@ -3,6 +3,8 @@ hat
 
 Generate random IDs and avoid collisions.
 
+![hat](http://substack.net/images/hat.png)
+
 example
 =======
 
