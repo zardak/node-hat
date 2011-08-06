@@ -5,13 +5,16 @@ Generate random IDs and avoid collisions.
 
 ![hat](http://substack.net/images/hat.png)
 
-example
-=======
+examples
+========
+
+hat
+---
 
 ````javascript
 var hat = require('hat');
 
-var id = hat(128);
+var id = hat();
 console.log(id);
 ````
 
@@ -19,6 +22,24 @@ output:
 
 ````
 0c82a54f22f775a3ed8b97b2dea74036
+````
+
+rack
+----
+
+````javascript
+var hat = require('hat');
+var rack = hat.rack();
+
+console.log(rack());
+console.log(rack());
+````
+
+output:
+
+````
+1c24171393dc5de04ffcb21f1182ab28
+fabe2323acc1b559dee43d4a1e16cbeb
 ````
 
 methods
