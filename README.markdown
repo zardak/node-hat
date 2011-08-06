@@ -1,7 +1,7 @@
 hat
 ===
 
-Generate random IDs.
+Generate random IDs and avoid collisions.
 
 example
 =======

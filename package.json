@@ -1,7 +1,7 @@
 {
     "name" : "hat",
     "version" : "0.0.0",
-    "description" : "generate random IDs and keep track of conflicts",
+    "description" : "generate random IDs and avoid collisions",
     "main" : "index.js",
     "directories" : {
         "lib" : ".",
