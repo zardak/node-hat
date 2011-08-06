@@ -26,7 +26,7 @@ var hat = module.exports = function (bits, base) {
 };
 
 hat.rack = function (bits, base, expandBy) {
-    var fn = function () {
+    var fn = function (data) {
         var iters = 0;
         do {
             if (iters ++ > 10) {
@@ -37,10 +37,15 @@ hat.rack = function (bits, base, expandBy) {
             var id = hat(bits, base);
         } while (Object.hasOwnProperty.call(hats, id));
         
-        hats[id] = true;
+        hats[id] = data;
         return id;
     };
     var hats = fn.hats = {};
+    
+    fn.get = function (id) {
+        return fn.hats[id];
+    };
+    
     fn.bits = bits || 128;
     fn.base = base || 16;
     return fn;

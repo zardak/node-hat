@@ -17,6 +17,21 @@ exports.rack = function () {
     });
 };
 
+exports.data = function () {
+    var rack = hat.rack(64);
+    var a = rack('a!');
+    var b = rack("it's a b!")
+    var c = rack([ 'c', 'c', 'c' ]);
+    
+    assert.equal(rack.get(a), 'a!');
+    assert.equal(rack.get(b), "it's a b!");
+    assert.deepEqual(rack.get(c), [ 'c', 'c', 'c' ]);
+    
+    assert.equal(rack.hats[a], 'a!');
+    assert.equal(rack.hats[b], "it's a b!");
+    assert.deepEqual(rack.hats[c], [ 'c', 'c', 'c' ]);
+};
+
 exports.expandBy = function () {
     var rack = hat.rack(4, 16, 4);
     var seen = {};
