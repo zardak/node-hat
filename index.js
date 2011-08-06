@@ -4,6 +4,10 @@ var hat = module.exports = function (bits, base) {
     if (bits <= 0) return '0';
     
     var digits = Math.log(Math.pow(2, bits)) / Math.log(base);
+    for (var i = 2; digits === Infinity; i *= 2) {
+        digits = Math.log(Math.pow(2, bits / i)) / Math.log(base) * i;
+    }
+    
     var rem = digits - Math.floor(digits);
     
     var res = '';
@@ -19,7 +23,8 @@ var hat = module.exports = function (bits, base) {
         res = x + res;
     }
     
-    if (parseInt(res, base) >= Math.pow(2, bits)) {
+    var parsed = parseInt(res, base);
+    if (parsed !== Infinity && parsed >= Math.pow(2, bits)) {
         return hat(bits, base)
     }
     else return res;

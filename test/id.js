@@ -37,3 +37,13 @@ exports.range = function () {
         }
     }
 };
+
+exports.big = function () {
+    var id = hat(1024);
+    assert.equal(id.length, 256);
+};
+
+exports.bigger = function () {
+    var id = hat(2048);
+    assert.equal(id.length, 512);
+};
