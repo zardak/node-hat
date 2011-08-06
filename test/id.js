@@ -27,7 +27,7 @@ exports.lengths = function () {
 
 exports.range = function () {
     for (var base = 2; base < 32; base++) {
-        for (var bits = 0; bits < 256; bits++) {
+        for (var bits = 0; bits < 256; bits += base) {
             for (var k = 0; k < 10; k++) {
                 var id = hat(bits, base);
                 var iid = parseInt(id, base);

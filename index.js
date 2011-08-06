@@ -1,29 +1,24 @@
-var exports = module.exports = function (bits, base) {
+var hat = module.exports = function (bits, base) {
     if (!base) base = 16;
     if (bits <= 0) return '0';
+    var digits = Math.log(Math.pow(2, bits)) / Math.log(base);
+    var rem = digits - Math.floor(digits);
     
-    for (var step = base * 2; step < 32; step *= 2);
-    
-    var bins = exports.generateBits(bits);
     var res = '';
-    for (var i = 0; i < base; i += step) {
-        var b = bins.slice(i, i + step);
-        var n = Math.ceil(Math.log(Math.pow(2, b.length)) / Math.log(base));
-        var s = parseInt(b, 2).toString(base);
-        res = Array(n - s.length + 1).join('0') + s + res;
+    
+    for (var i = 0; i < Math.floor(digits); i++) {
+        var x = Math.floor(Math.random() * base).toString(base);
+        res = x + res;
     }
     
-    return res;
-};
-
-exports.generateBits = function (bits) {
-    var bin = '';
-    for (var i = 0; i < bits; i += 32) {
-        var b = Math.min(32, bits - i);
-        var n = Math.random() * Math.pow(2,b);
-        var s = Math.floor(n).toString(2);
-        var m = Math.min(32, bits - i);
-        bin += Array(m + 1 - s.length).join('0') + s;
+    if (rem) {
+        var b = Math.pow(base, rem);
+        var x = Math.floor(Math.random() * b).toString(base);
+        res = x + res;
     }
-    return bin;
+    
+    if (parseInt(res, base) >= Math.pow(2, bits)) {
+        return hat(bits, base)
+    }
+    else return res;
 };
