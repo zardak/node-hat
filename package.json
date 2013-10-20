@@ -16,7 +16,7 @@
     },
     "repository" : {
         "type" : "git",
-        "url" : "http://github.com/substack/node-hat.git"
+        "url" : "http://github.com/zardak/node-hat.git"
     },
     "keywords" : [
         "id",

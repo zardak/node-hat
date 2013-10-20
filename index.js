@@ -55,6 +55,10 @@ hat.rack = function (bits, base, expandBy) {
         fn.hats[id] = value;
         return fn;
     };
+
+    fn.rm = function (id) {
+        delete fn.hats[id];
+    };
     
     fn.bits = bits || 128;
     fn.base = base || 16;
